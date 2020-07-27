@@ -16,7 +16,7 @@ $ python3 main.py
 - 123456789s stands for sou 🀐🀑🀒🀓🀔🀕🀖🀗🀘
 - 1234567z stands for ton-nan-xia-pei-haku-hatsu-chun 🀀🀁🀂🀃🀆🀅🀄
 - 0m 0p 0s stands for aka
-- x stands for Mahjong Tile Back 🀫
+- x stands for tileback 🀫
 
 ## Examples
 - 1112345678999m 0m
