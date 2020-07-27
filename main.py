@@ -168,15 +168,15 @@ def make():
 
 
 window = Tk()
-window.title("和牌生成器")
+window.title("Draw Generator")
 window.resizable(False, False)
 
-ttk.Label(window, text='手牌').grid(column=0, row=0, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='hand').grid(column=0, row=0, sticky=W, padx=5, pady=5)
 tehai = StringVar()
 tehai_entered = ttk.Entry(window, width=50, textvariable=tehai)
 tehai_entered.grid(column=1, row=0, columnspan=6, sticky=W)
 
-ttk.Label(window, text='副露').grid(column=0, row=1, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='?').grid(column=0, row=1, sticky=W, padx=5, pady=5)
 fuuro = StringVar()
 fuuro_entered = ttk.Entry(window, width=50, textvariable=fuuro)
 fuuro_entered.grid(column=1, row=1, columnspan=6, sticky=W)
@@ -191,7 +191,7 @@ ura = StringVar()
 ura_entered = ttk.Entry(window, width=14, textvariable=ura)
 ura_entered.grid(column=4, row=2, columnspan=2, sticky=W)
 
-ttk.Label(window, text='场风').grid(column=0, row=3, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Prevailing wind').grid(column=0, row=3, sticky=W, padx=5, pady=5)
 placewind = StringVar()
 placewind_entered = ttk.Combobox(window,
                                  width=12,
@@ -201,7 +201,7 @@ placewind_entered['values'] = ('东', '南', '西', '北')
 placewind_entered.grid(column=1, row=3, columnspan=2, sticky=W)
 placewind_entered.current(0)
 
-ttk.Label(window, text='自风').grid(column=3, row=3, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Seat wind').grid(column=3, row=3, sticky=W, padx=5, pady=5)
 selfwind = StringVar()
 selfwind_entered = ttk.Combobox(window,
                                 width=12,
@@ -213,43 +213,43 @@ selfwind_entered.current(0)
 
 ttk.Label(window, text='役种').grid(column=0, row=4, sticky=W, padx=5, pady=5)
 richi = BooleanVar()
-richi_entered = ttk.Checkbutton(window, text='立直', variable=richi)
+richi_entered = ttk.Checkbutton(window, text='Riichi', variable=richi)
 richi_entered.grid(column=1, row=4, sticky=W, padx=5)
 
 doublerichi = BooleanVar()
-doublerichi_entered = ttk.Checkbutton(window, text='两立直', variable=doublerichi)
+doublerichi_entered = ttk.Checkbutton(window, text='Double Riichi', variable=doublerichi)
 doublerichi_entered.grid(column=2, row=4, sticky=W, padx=5)
 
 ippatsu = BooleanVar()
-ippatsu_entered = ttk.Checkbutton(window, text='一发', variable=ippatsu)
+ippatsu_entered = ttk.Checkbutton(window, text='Ippatsu', variable=ippatsu)
 ippatsu_entered.grid(column=3, row=4, sticky=W, padx=5)
 
 tsumo = BooleanVar()
-tsumo_entered = ttk.Checkbutton(window, text='自摸', variable=tsumo)
+tsumo_entered = ttk.Checkbutton(window, text='Tsumo', variable=tsumo)
 tsumo_entered.grid(column=4, row=4, sticky=W, padx=5)
 
 rinshan = BooleanVar()
-rinshan_entered = ttk.Checkbutton(window, text='岭上', variable=rinshan)
+rinshan_entered = ttk.Checkbutton(window, text='Rinshan', variable=rinshan)
 rinshan_entered.grid(column=5, row=4, sticky=W, padx=5)
 
 chankan = BooleanVar()
-chankan_entered = ttk.Checkbutton(window, text='抢杠', variable=chankan)
+chankan_entered = ttk.Checkbutton(window, text='Chankan', variable=chankan)
 chankan_entered.grid(column=1, row=5, sticky=W, padx=5)
 
 haitei = BooleanVar()
-haitei_entered = ttk.Checkbutton(window, text='海底', variable=haitei)
+haitei_entered = ttk.Checkbutton(window, text='Haitei', variable=haitei)
 haitei_entered.grid(column=2, row=5, sticky=W, padx=5)
 
 houtei = BooleanVar()
-houtei_entered = ttk.Checkbutton(window, text='河底', variable=houtei)
+houtei_entered = ttk.Checkbutton(window, text='Houtei', variable=houtei)
 houtei_entered.grid(column=3, row=5, sticky=W, padx=5)
 
 tenhoo = BooleanVar()
-tenhoo_entered = ttk.Checkbutton(window, text='天和', variable=tenhoo)
+tenhoo_entered = ttk.Checkbutton(window, text='Tenhou', variable=tenhoo)
 tenhoo_entered.grid(column=4, row=5, sticky=W, padx=5)
 
 chiihoo = BooleanVar()
-chiihoo_entered = ttk.Checkbutton(window, text='地和', variable=chiihoo)
+chiihoo_entered = ttk.Checkbutton(window, text='Chihou', variable=chiihoo)
 chiihoo_entered.grid(column=5, row=5, sticky=W, padx=5)
 
 Button = ttk.Button(window, width=60, text='生成图片 & 计算得点', command=make)
