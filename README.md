@@ -1,25 +1,23 @@
 # majsoul-generator
-python script to generate majsoul Mahjong Tiles
+Python program to generate majsoul hands pictures. Forked and translated from [here](https://github.com/Neutralization/majsoul-generator). It also calculates the score using this [site](https://www.diving-fish.com/mahjong/point). Just run with 
+$ python3 main.py
 
 ## Requirements
 
 - [Pillow](https://github.com/python-pillow/Pillow)
 
-For Windows EXE
-- [pyinstaller](https://github.com/pyinstaller/pyinstaller)
-
-## Resource
-[雀魂麻將](https://www.maj-soul.com/#/home)
+## Tileset resource
+[Mahjong Soul](https://www.maj-soul.com/#/home)
 
 ## Manual
-- 123456789m stands for 万/マン/Characters 🀇🀈🀉🀊🀋🀌🀍🀎🀏
-- 123456789p stands for 饼/ピン/Circles 🀙🀚🀛🀜🀝🀞🀟🀠🀡
-- 123456789s stands for 索/ソウ/Bamboos 🀐🀑🀒🀓🀔🀕🀖🀗🀘
-- 1234567z stands for 字·风/ジ/Wind·Dragon 🀀🀁🀂🀃🀆🀅🀄
-- 0m 0p 0s stands for 赤/Red Tile
+- 123456789m stands for man 🀇🀈🀉🀊🀋🀌🀍🀎🀏
+- 123456789p stands for pin 🀙🀚🀛🀜🀝🀞🀟🀠🀡
+- 123456789s stands for sou 🀐🀑🀒🀓🀔🀕🀖🀗🀘
+- 1234567z stands for ton-nan-xia-pei-haku-hatsu-chun 🀀🀁🀂🀃🀆🀅🀄
+- 0m 0p 0s stands for aka
 - x stands for Mahjong Tile Back 🀫
 
-## Example
+## Examples
 - 1112345678999m 0m
 ![](img/1112345678999m_0m.png)
 
@@ -34,8 +32,3 @@ For Windows EXE
 
 - 1m 123m123p123s111z 1m
 ![](img/1m_123m123p123s111z_1m.png)
-
-## Todo
-- [x] Point counting.
-- [x] Image generate.
-- [x] Mahjong Tiles Sorting.

@@ -36,12 +36,12 @@ def countPoint(data):
             26, 26, 26, 26
         ]
         if int(yaku_id) // 100 == 1:
-            return "{}\t{}番\n".format("宝牌", int(yaku_id) % 100)
+            return "{}\t{} Han\n".format("Dora", int(yaku_id) % 100)
         elif int(yaku_id) // 100 == 2:
-            return "{}\t{}番\n".format("赤宝牌", int(yaku_id) % 100)
+            return "{}\t{} Han\n".format("Akadora", int(yaku_id) % 100)
         elif int(yaku_id) // 100 == 3:
-            return "{}\t{}番\n".format("里宝牌", int(yaku_id) % 100)
-        return "{}\t{}番\n".format(
+            return "{}\t{} Han\n".format("Uradora", int(yaku_id) % 100)
+        return "{}\t{} Han\n".format(
             names[ids.index(yaku_id)], fan_richi[ids.index(yaku_id)]
             if ura else fan_fuuro[ids.index(yaku_id)])
 
@@ -67,10 +67,10 @@ def countPoint(data):
     for x in result['data']['yakus']:
         resultBox.insert(INSERT, getYakuInfo(x, result['data']['inner']))
     resultBox.insert(
-        INSERT, '总计\t{}符{}番\n'.format(result['data']['fu'],
+        INSERT, 'Value\t{} Fu -{} Han\n'.format(result['data']['fu'],
                                       result['data']['fan']))
     resultBox.insert(
-        INSERT, '得点\t{}\n'.format((
+        INSERT, 'Score\t{}\n'.format((
             "{} ALL".format(result['data']['perPoint'] * 2 // 100 *
                             100) if result['data']['tsumo'] else (
                                 result['data']['perPoint'] * 6 // 100 * 100)
@@ -168,30 +168,30 @@ def make():
 
 
 window = Tk()
-window.title("Draw Generator")
+window.title("Hand generator")
 window.resizable(False, False)
 
-ttk.Label(window, text='hand').grid(column=0, row=0, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Hand').grid(column=0, row=0, sticky=W, padx=5, pady=5)
 tehai = StringVar()
 tehai_entered = ttk.Entry(window, width=50, textvariable=tehai)
 tehai_entered.grid(column=1, row=0, columnspan=6, sticky=W)
 
-ttk.Label(window, text='?').grid(column=0, row=1, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Calls').grid(column=0, row=1, sticky=W, padx=5, pady=5)
 fuuro = StringVar()
 fuuro_entered = ttk.Entry(window, width=50, textvariable=fuuro)
 fuuro_entered.grid(column=1, row=1, columnspan=6, sticky=W)
 
-ttk.Label(window, text='Dora').grid(column=0, row=2, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Dora indicator').grid(column=0, row=2, sticky=W, padx=5, pady=5)
 dora = StringVar()
 dora_entered = ttk.Entry(window, width=14, textvariable=dora)
 dora_entered.grid(column=1, row=2, columnspan=2, sticky=W)
 
-ttk.Label(window, text='Uradora').grid(column=3, row=2, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Uradora indicator').grid(column=3, row=2, sticky=W, padx=5, pady=5)
 ura = StringVar()
 ura_entered = ttk.Entry(window, width=14, textvariable=ura)
 ura_entered.grid(column=4, row=2, columnspan=2, sticky=W)
 
-ttk.Label(window, text='Prevailing wind').grid(column=0, row=3, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Prevalent wind').grid(column=0, row=3, sticky=W, padx=5, pady=5)
 placewind = StringVar()
 placewind_entered = ttk.Combobox(window,
                                  width=12,
@@ -211,7 +211,7 @@ selfwind_entered['values'] = ('东', '南', '西', '北')
 selfwind_entered.grid(column=4, row=3, columnspan=2, sticky=W)
 selfwind_entered.current(0)
 
-ttk.Label(window, text='役种').grid(column=0, row=4, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Options').grid(column=0, row=4, sticky=W, padx=5, pady=5)
 richi = BooleanVar()
 richi_entered = ttk.Checkbutton(window, text='Riichi', variable=richi)
 richi_entered.grid(column=1, row=4, sticky=W, padx=5)
@@ -249,17 +249,17 @@ tenhoo_entered = ttk.Checkbutton(window, text='Tenhou', variable=tenhoo)
 tenhoo_entered.grid(column=4, row=5, sticky=W, padx=5)
 
 chiihoo = BooleanVar()
-chiihoo_entered = ttk.Checkbutton(window, text='Chihou', variable=chiihoo)
+chiihoo_entered = ttk.Checkbutton(window, text='Chiihou', variable=chiihoo)
 chiihoo_entered.grid(column=5, row=5, sticky=W, padx=5)
 
-Button = ttk.Button(window, width=60, text='生成图片 & 计算得点', command=make)
+Button = ttk.Button(window, width=60, text='Calculate & save to .png', command=make)
 Button.grid(column=0, row=6, columnspan=6, padx=5, pady=5)
 
 resultBox = scrolledtext.ScrolledText(window,
                                       width=24,
                                       height=10,
                                       wrap=WORD,
-                                      font=('微软雅黑', 24))
+                                      font=('Arial', 24))
 resultBox.grid(column=0, row=7, columnspan=6)
 
 richi.set(True)
