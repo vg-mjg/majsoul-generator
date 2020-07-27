@@ -1,7 +1,8 @@
 # majsoul-generator
-Python program to generate majsoul hands pictures. Forked and translated from [here](https://github.com/Neutralization/majsoul-generator). It also calculates the score using this [site](https://www.diving-fish.com/mahjong/point). Just run with 
+Python program to generate majsoul hands pictures. Forked and translated from [here](https://github.com/Neutralization/majsoul-generator). It also calculates the score using this [site](https://www.diving-fish.com/mahjong/point). Just run it with 
+```bash
 $ python3 main.py
-
+```
 ## Requirements
 
 - [Pillow](https://github.com/python-pillow/Pillow)
