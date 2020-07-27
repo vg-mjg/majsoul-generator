@@ -18,7 +18,7 @@ def countPoint(data):
             33, 34, 35, 36, 37, 38, 39, 40, 41
         ]
         names = [
-            "Riichi", "ippatsu", "Tsumo", "Pinfu", "Tanyao", "Iipeikou", "Wind：Prevalent", "Wind：Seat",
+            "Riichi", "Ippatsu", "Tsumo", "Pinfu", "Tanyao", "Iipeikou", "Prevalent wind", "Seat wind",
             "Haku", "Hatsu", "Chun", "Haitei", "Houtei", "Chankan", "Rinshan", "Double riichi", "Chiitoi",
             "Ittsu", "Sanshoku doujun", "Chanta", "Sanshoku doukou", "Sanankou", "Toitoi", "Shousangen", "Honroutou", "Sankantsu",
             "Honitsu", "Junchan", "Ryanpeikou", "Chinitsu", "Kokushi", "Daisangen", "Suuankou", "Shousuushi", "Tsuuiisou",
@@ -63,7 +63,6 @@ def countPoint(data):
                            headers=headers,
                            data=json.dumps(data)).json()
     if result.get('status') != 200:
-        #messagebox.showwarning(u'噔 噔 咚', result.get('message'))
         messagebox.showwarning('Error', 'Recheck the syntax.')
 
     for x in result['data']['yakus']:
@@ -178,7 +177,7 @@ tehai = StringVar()
 tehai_entered = ttk.Entry(window, width=50, textvariable=tehai)
 tehai_entered.grid(column=1, row=0, columnspan=6, sticky=W)
 
-ttk.Label(window, text='Calls').grid(column=0, row=1, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Calls????').grid(column=0, row=1, sticky=W, padx=5, pady=5)
 fuuro = StringVar()
 fuuro_entered = ttk.Entry(window, width=50, textvariable=fuuro)
 fuuro_entered.grid(column=1, row=1, columnspan=6, sticky=W)
