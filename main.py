@@ -18,12 +18,12 @@ def countPoint(data):
             33, 34, 35, 36, 37, 38, 39, 40, 41
         ]
         names = [
-            "立直", "一发", "门前清自摸和", "平和", "断幺九", "一杯口", "役牌：场风牌", "役牌：自风牌",
-            "役牌：白", "役牌：发", "役牌：中", "海底捞月", "河底捞鱼", "枪杠", "岭上开花", "两立直", "七对子",
-            "一气通贯", "三色同顺", "混全带幺九", "三色同刻", "三暗刻", "对对和", "小三元", "混老头", "三杠子",
-            "混一色", "纯全带幺九", "二杯口", "清一色", "国士无双", "大三元", "四暗刻", "小四喜", "字一色",
-            "绿一色", "清老头", "九莲宝灯", "四杠子", "天和", "地和", "国士无双十三面", "大四喜", "四暗刻单骑",
-            "纯正九莲宝灯"
+            "Riichi", "ippatsu", "Tsumo", "Pinfu", "Tanyao", "Iipeikou", "Wind：Prevalent", "Wind：Seat",
+            "Haku", "Hatsu", "Chun", "Haitei", "Houtei", "Chankan", "Rinshan", "两立直", "Chiitoi",
+            "Ittsu", "Sanshoku doujun", "Chanta", "Sanshoku doukou", "Sanankou", "对对和", "Shousangen", "混老头", "Sankantsu",
+            "Honitsu", "Junchan", "Ryanpeikou", "Chinitsu", "Kokushi", "Daisangen", "Suuankou", "Shousuushi", "Tsuuiisou",
+            "Ryuuiisou", "清老头", "Chuuren", "Suukantsu", "Tenhou", "Chiihou", "Kokushi 13 waits", "大四喜", "Suuankou tanki",
+            "Junsei Chuuren"
         ]
         fan_richi = [
             1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
@@ -181,12 +181,12 @@ fuuro = StringVar()
 fuuro_entered = ttk.Entry(window, width=50, textvariable=fuuro)
 fuuro_entered.grid(column=1, row=1, columnspan=6, sticky=W)
 
-ttk.Label(window, text='宝牌指示牌').grid(column=0, row=2, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Dora').grid(column=0, row=2, sticky=W, padx=5, pady=5)
 dora = StringVar()
 dora_entered = ttk.Entry(window, width=14, textvariable=dora)
 dora_entered.grid(column=1, row=2, columnspan=2, sticky=W)
 
-ttk.Label(window, text='里宝指示牌').grid(column=3, row=2, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Uradora').grid(column=3, row=2, sticky=W, padx=5, pady=5)
 ura = StringVar()
 ura_entered = ttk.Entry(window, width=14, textvariable=ura)
 ura_entered.grid(column=4, row=2, columnspan=2, sticky=W)
