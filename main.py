@@ -19,10 +19,10 @@ def countPoint(data):
         ]
         names = [
             "Riichi", "ippatsu", "Tsumo", "Pinfu", "Tanyao", "Iipeikou", "Wind：Prevalent", "Wind：Seat",
-            "Haku", "Hatsu", "Chun", "Haitei", "Houtei", "Chankan", "Rinshan", "两立直", "Chiitoi",
-            "Ittsu", "Sanshoku doujun", "Chanta", "Sanshoku doukou", "Sanankou", "对对和", "Shousangen", "混老头", "Sankantsu",
+            "Haku", "Hatsu", "Chun", "Haitei", "Houtei", "Chankan", "Rinshan", "Double riichi", "Chiitoi",
+            "Ittsu", "Sanshoku doujun", "Chanta", "Sanshoku doukou", "Sanankou", "Toitoi", "Shousangen", "Honroutou", "Sankantsu",
             "Honitsu", "Junchan", "Ryanpeikou", "Chinitsu", "Kokushi", "Daisangen", "Suuankou", "Shousuushi", "Tsuuiisou",
-            "Ryuuiisou", "清老头", "Chuuren", "Suukantsu", "Tenhou", "Chiihou", "Kokushi 13 waits", "大四喜", "Suuankou tanki",
+            "Ryuuiisou", "Chinroutou", "Chuuren", "Suukantsu", "Tenhou", "Chiihou", "Kokushi 13 waits", "Daisuushii", "Suuankou tanki",
             "Junsei Chuuren"
         ]
         fan_richi = [
@@ -63,11 +63,13 @@ def countPoint(data):
                            headers=headers,
                            data=json.dumps(data)).json()
     if result.get('status') != 200:
-        messagebox.showwarning(u'噔 噔 咚', result.get('message'))
+        #messagebox.showwarning(u'噔 噔 咚', result.get('message'))
+        messagebox.showwarning('Error', 'Recheck the syntax.')
+
     for x in result['data']['yakus']:
         resultBox.insert(INSERT, getYakuInfo(x, result['data']['inner']))
     resultBox.insert(
-        INSERT, 'Value\t{} Fu -{} Han\n'.format(result['data']['fu'],
+        INSERT, 'Value\t{} Fu - {} Han\n'.format(result['data']['fu'],
                                       result['data']['fan']))
     resultBox.insert(
         INSERT, 'Score\t{}\n'.format((
