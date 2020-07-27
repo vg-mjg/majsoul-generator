@@ -4,7 +4,7 @@ Python program to generate majsoul hands pictures. Forked and translated from [h
 $ python3 main.py
 ```
 ## Requirements
-
+- [Python](https://www.python.org/)
 - [Pillow](https://github.com/python-pillow/Pillow)
 
 ## Tileset resources
