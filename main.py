@@ -177,7 +177,7 @@ tehai = StringVar()
 tehai_entered = ttk.Entry(window, width=50, textvariable=tehai)
 tehai_entered.grid(column=1, row=0, columnspan=6, sticky=W)
 
-ttk.Label(window, text='Calls????').grid(column=0, row=1, sticky=W, padx=5, pady=5)
+ttk.Label(window, text='Fuuro(what?)').grid(column=0, row=1, sticky=W, padx=5, pady=5)
 fuuro = StringVar()
 fuuro_entered = ttk.Entry(window, width=50, textvariable=fuuro)
 fuuro_entered.grid(column=1, row=1, columnspan=6, sticky=W)
