@@ -63,7 +63,7 @@ def countPoint(data):
                            headers=headers,
                            data=json.dumps(data)).json()
     if result.get('status') != 200:
-        messagebox.showwarning('Error', 'Recheck the syntax.')
+        messagebox.showwarning('Error', 'Value not calculated, please recheck syntax.')
 
     for x in result['data']['yakus']:
         resultBox.insert(INSERT, getYakuInfo(x, result['data']['inner']))
